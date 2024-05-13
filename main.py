@@ -10,8 +10,6 @@ def main(img_path, prompt):
     prompt  =prompt.lower()
     # print(os.path.exists(img_path)) 
 
-
-
     for dir, dirpath, files in os.walk(img_path):
         for file in files:
             filename = file.split(".")[0]
