@@ -1,13 +1,14 @@
-    import sys
+import sys
 import os 
 import sqlite3 as sql3
 from PIL import Image
+from gemini import getting_data
 
 def main(img_path, prompt):
     
     dict = {'':''}
-
-    print(os.path.exists(img_path)) 
+    prompt  =prompt.lower()
+    # print(os.path.exists(img_path)) 
 
 
 
@@ -39,6 +40,11 @@ def main(img_path, prompt):
         
     print(s)
 
-
-main("dataset", "I stack push pop !!")
+if __name__ == "__main__":
+    with open("data.txt") as f:
+        data = f.read()
+        print(data)
+        res = getting_data(data)
+        print(res)
+        main("dataset", res)
 
